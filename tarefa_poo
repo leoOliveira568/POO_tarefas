@@ -1,3 +1,5 @@
+// codigo da numero 1
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -44,3 +46,68 @@ public class Main {
         }
     }
 }
+
+
+// codigo da numero 3
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite os números separados por espaço: ");
+        String[] numerosStr = scanner.nextLine().split(" ");
+        int[] numeros = new int[numerosStr.length];
+
+        for (int i = 0; i < numerosStr.length; i++) {
+            numeros[i] = Integer.parseInt(numerosStr[i]);
+        }
+
+        System.out.println("Quantidade de números digitados: " + numeros.length);
+
+        int maiorNumero = Integer.MIN_VALUE;
+        int menorNumero = Integer.MAX_VALUE;
+        int soma = 0;
+        for (int numero : numeros) {
+            soma += numero;
+            if (numero > maiorNumero) {
+                maiorNumero = numero;
+            }
+            if (numero < menorNumero) {
+                menorNumero = numero;
+            }
+        }
+
+        double media = (double) soma / numeros.length;
+        System.out.println("O maior número digitado é: " + maiorNumero);
+        System.out.println("O menor número digitado é: " + menorNumero);
+        System.out.println("A média dos números digitados é: " + media);
+    }
+}
+
+// codigo da numero 5
+
+public class Main {
+    public static void main(String[] args) {
+        String dna1 = "GAGCCTACTAACGGGAT";
+        String dna2 = "CATCGTAATGACGGCCT";
+        System.out.println("Distância: " + Distanciadehamming(dna1, dna2));
+    }
+
+    public static int Distanciadehamming(String dna1, String dna2) {
+        if (dna1.length() != dna2.length()) {
+            throw new IllegalArgumentException("As cadeias tem que ter o mesmo comprimento.");
+        }
+
+        int count = 0;
+        for (int i = 0; i < dna1.length(); i++) {
+            if (dna1.charAt(i) != dna2.charAt(i)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
+
