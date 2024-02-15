@@ -12,7 +12,7 @@ public class Main {
             numeros[i] = Integer.parseInt(numerosStr[i]);
         }
 
-        System.out.println("Quantidade de números digitados: " + numeros.length);
+        System.out.println("Quantidade de números digitados são: " + numeros.length);
 
         int maiorNumero = Integer.MIN_VALUE;
         int menorNumero = Integer.MAX_VALUE;
@@ -28,8 +28,8 @@ public class Main {
         }
 
         double media = (double) soma / numeros.length;
-        System.out.println("O maior número digitado é: " + maiorNumero);
-        System.out.println("O menor número digitado é: " + menorNumero);
+        System.out.println("O maior número é: " + maiorNumero);
+        System.out.println("O menor número é: " + menorNumero);
         System.out.println("A média dos números digitados é: " + media);
     }
 }
