@@ -1,0 +1,46 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<String, String> listaDeCores = new HashMap<>();
+        listaDeCores.put("preto", "0");
+        listaDeCores.put("marrom", "1");
+        listaDeCores.put("vermelho", "2");
+        listaDeCores.put("laranja", "3");
+        listaDeCores.put("amarelo", "4");
+        listaDeCores.put("verde", "5");
+        listaDeCores.put("azul", "6");
+        listaDeCores.put("violeta", "7");
+        listaDeCores.put("cinza", "8");
+        listaDeCores.put("branco", "9");
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.print("Digite as cores separadas por hífen (-): ");
+            String[] cores = scanner.nextLine().toLowerCase().split("-");
+            String codigoConcatenado = "";
+
+            for (int i = 0; i < Math.min(2, cores.length); i++) {
+                String cor = cores[i];
+                if (listaDeCores.containsKey(cor)) {
+                    codigoConcatenado += listaDeCores.get(cor);
+                } else {
+                    System.out.println("Cor inválida: " + cor);
+                }
+            }
+
+            if (!codigoConcatenado.isEmpty()) {
+                System.out.println("Resultado:" + codigoConcatenado);
+            }
+
+            System.out.print("Deseja continuar (s/n)? ");
+            String continuar = scanner.nextLine().toLowerCase();
+            if (!continuar.equals("s")) {
+                break;
+            }
+        }
+    }
+}
